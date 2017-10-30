@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="felepo.contador.MainActivity"
+    tools:showIn="@layout/activity_main">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tituloTexto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="26dp"
+            android:text="Contador: "
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/contadorPulsaciones"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="0"
+            android:textSize="56dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical|center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/botonIncrementar"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:autoText="false"
+            android:elegantTextHeight="false"
+            android:onClick="incrementarContador"
+            android:text="+"
+            android:textAlignment="center"
+            android:textSize="60dp" />
+
+        <Space
+            android:layout_width="50dp"
+            android:layout_height="0dp"/>
+
+        <Button
+            android:id="@+id/botonDecrementar"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:onClick="decrementarContador"
+            android:text="-"
+            android:textSize="60dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom|center_horizontal"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/botonReiniciar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="25dp"
+            android:onClick="reiniciarContador"
+            android:text="Reiniciar"
+            android:textAllCaps="false"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/inNumber"
+            android:layout_width="72sp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="25dp"
+            android:cursorVisible="false"
+            android:ems="10"
+            android:hint="0"
+            android:inputType="number|numberSigned"
+            android:textAlignment="center" />
+
+        <CheckBox
+            android:id="@+id/negativos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="25dp"
+            android:text="¿Permitir negativos?"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+</RelativeLayout>
