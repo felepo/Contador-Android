@@ -71,7 +71,6 @@ public class MainActivity extends Activity {
             contador = 0;
         }
 
-        //Si la casilla no esta seleccionada y el numero es negativo, entonces contador es cero.
         if( ( !casillaNegativo.isChecked() ) && ( contador < 0 ) )
         {
             contador = 0;
