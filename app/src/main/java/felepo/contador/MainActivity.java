@@ -25,11 +25,34 @@ public class MainActivity extends Activity {
 
         contador = 0;
 
+        textoResultado.setText("" + contador);
+
         //Establecer el escuchador para el EditText de nReinicios
         EventoTeclado teclado = new EventoTeclado();
         EditText nReinicios = (EditText) findViewById(R.id.nReinicios);
         nReinicios.setOnEditorActionListener(teclado);
 
+    }
+
+    /*
+    Con el método onSaveInstanceState() guardo el estado de cuenta en un Bundle si algo pasa. Por
+    ejemplo: otra aplicación se coloca en primer plano, se cambia la dirección del teléfono, etc.
+    */
+    public void onSaveInstanceState(Bundle estado)
+    {
+        estado.putInt("cuenta", contador);
+
+        super.onSaveInstanceState(estado);
+    }
+
+    //Con onRestoreInstanceState() recupero la información que previamente guarde en el Bundle.
+    public void onRestoreInstanceState(Bundle estado)
+    {
+        super.onRestoreInstanceState(estado);
+
+        contador = estado.getInt("cuenta");
+
+        textoResultado.setText("" + contador);
     }
 
     /*
